@@ -3,10 +3,8 @@
 An application store with cart and discount on the purchase.
 
 ## See in production
+[Application store](https://shopeng.herokuapp.com/)
 [![build status](https://img.shields.io/travis/heroku/react-refetch/master.svg?style=flat-square)](https://travis-ci.org/heroku/shopeng)
-```sh
-$ [Application store](https://shopeng.herokuapp.com/)
-```
 
 ## Running Locally
 
