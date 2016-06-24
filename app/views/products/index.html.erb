@@ -1,0 +1,18 @@
+<div align="right">
+	<%= link_to t('new_prod'), new_product_path, class: "btn btn-primary"%>
+</div>
+<% if @products.size == 0 %>
+   <p class="text-center">
+    	Não existem produto algum a venda. <%= link_to t("new_prod"),
+    	products_path %> agora mesmo. </p>
+<% else %>
+	<h3 class="text-center"> <%= t('products') %> </h3>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
+    <% @products.each do |product| %>
+      <%= render "product_row", product: product, order_item: @order_item %>
+    <% end %>
+  </div>
+</div>

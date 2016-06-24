@@ -1,0 +1,8 @@
+{
+  "name": "ShopApp",
+  "description": "A barebones e-commerce app, which can easily be deployed to Heroku",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/junqueira/shopapp",
+  "keywords": ["ruby", "rails" ],
+  "addons": [ "heroku-postgresql" ]
+}

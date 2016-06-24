@@ -1,0 +1,29 @@
+<% if !@order_item.nil? && @order_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @order_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="actions" align="right">
+	<%= link_to t('back_prod'), products_path, class: "btn btn-default"%>
+ 	<% if current_order.subtotal >= t('value_min') %>
+ 		<%= link_to t('checkout'), checkout_path, class: "btn btn-success"%>
+ 	<% else %>
+    	<%= link_to t('checkout'), checkout_path, { data: { confirm: "Sua pedido nåo atingiu valor minimo de '#{t('value_min')}' nåo e possivel finalizar!" },
+     	remote: true, class: "btn btn-warning" } %>
+	<% end %>
+</div>
+<br>
+<% if @order_items.size == 0 %>
+  <p class="text-center">
+    Não existem itens no seu carrinho de compras.  Por favor <%= link_to "Volte", root_path %> e adicionar alguns itens ao seu carrinho.
+  </p>
+<% else %>
+  <% @order_items.each do |order_item| %>
+    <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
+  <% end %>
+<% end %>

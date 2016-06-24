@@ -1,0 +1,18 @@
+<% if !@order_item.nil? && @order_item.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+    <% @order_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @order_items.size == 0 %>
+  <p class="text-center">
+    Não existem pedido de compras confirmado. Por favor <%= link_to "Volte", root_path %> confirma compra do seu carrinho.
+  </p>
+<% else %>
+  <% @order_items.each do |order_item| %>
+    <%= render 'checkouts/checkout_row', product: order_item.product, order_item: order_item, show_total: true %>
+  <% end %>
+<% end %>

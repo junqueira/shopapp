@@ -1,0 +1,16 @@
+"pt-BR":
+  result: 'Items no Carrinho'
+  store: 'Loja'
+  products: 'Produtos a Venda'
+  add_cart: 'Adicionar'
+  edit_cart: 'Editar'
+  update_quantity: 'Atualizar Quantidade'
+  unit_price: 'Preço Unitario:'
+  quantity: 'Quantidade:'
+  total_price: 'Preço Total:'
+  delete: 'Delete'
+  checkout: 'Confirma pedido'
+  new_prod: 'Criar Produto'
+  back_prod: 'Voltar'
+  value_min: 200
+

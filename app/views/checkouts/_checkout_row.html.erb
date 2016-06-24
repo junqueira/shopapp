@@ -1,0 +1,17 @@
+<div class="well">
+
+  <div class="row">
+    <div class="col-xs-8">
+      <h4><%= product.name %></h4>
+    </div>
+    <div class="col-xs-4">
+
+      <%= form_for order_item, remote: true do |f| %>
+        <h4 class="text-right"> <%= t('unit_price') %> <span style="color: green"><%= number_to_currency order_item.unit_price, unit: "R$", separator: ",", delimiter: "" %></span></h4>
+        <h4 class="text-right"> <%= t('quantity') %> <span style="color: green"><%= order_item.quantity.to_i %></span></h4>
+        <h4 class="text-right"> <%= t('total_price') %> <span style="color: green"><%= number_to_currency order_item.total_price, unit: "R$", separator: ",", delimiter: ""%></span></h4>
+      <% end %>
+    </div>
+
+  </div>
+</div>
