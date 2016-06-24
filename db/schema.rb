@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623170827) do
+ActiveRecord::Schema.define(version: 20160624123957) do
 
   create_table "checkouts", force: true do |t|
     t.integer  "product_id"
@@ -25,6 +25,20 @@ ActiveRecord::Schema.define(version: 20160623170827) do
 
   add_index "checkouts", ["order_id"], name: "index_checkouts_on_order_id"
   add_index "checkouts", ["product_id"], name: "index_checkouts_on_product_id"
+
+  create_table "coupons", force: true do |t|
+    t.string   "type"
+    t.string   "code"
+    t.decimal  "amount"
+    t.decimal  "minimum_value"
+    t.integer  "percent"
+    t.text     "description"
+    t.boolean  "combine"
+    t.datetime "starts_at"
+    t.datetime "expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "order_items", force: true do |t|
     t.integer  "product_id"

@@ -1,0 +1,28 @@
+<%= form_for(@coupon, :multipart => true) do |f| %>
+  <% if @coupon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@coupon.errors.count, "error") %> prohibited this item from being saved:</h2>
+      <ul>
+      <% @coupon.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :minimum_value %><br>
+    <%= f.number_field :minimum_value, min: 1 %>
+  </div>
+  <div class="field">
+    <%= f.label :percent %><br>
+    <%= f.number_field :percent, min: 1 %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

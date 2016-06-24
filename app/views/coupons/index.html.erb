@@ -1,0 +1,37 @@
+<div align="right">
+	<%= link_to t('new_coupon'), new_coupon_path, class: "btn btn-primary"%>
+</div>
+<h3 class="text-center"> <%= t('coupons') %> </h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descriçåo</th>
+      <th></th>
+      <th>Valor Minimo</th>
+      <th></th>
+      <th>Percentual</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coupons.each do |coupon| %>
+      <tr>
+        <td><%= coupon.description %></td>
+        <th></th>
+        <td><%= coupon.minimum_value %></td>
+        <th></th>
+        <td><%= coupon.percent %></td>
+        <th></th>
+        <td><%= link_to 'Edit', edit_coupon_path(coupon) %></td>
+        <th></th>
+        <td><%= link_to 'Destroy', coupon, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('new_coupon'), new_coupon_path %>

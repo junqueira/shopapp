@@ -2,6 +2,7 @@
   result: 'Items no Carrinho'
   store: 'Loja'
   products: 'Produtos a Venda'
+  coupons: 'Cupom para Desconto'
   add_cart: 'Adicionar'
   edit_cart: 'Editar'
   update_quantity: 'Atualizar Quantidade'
@@ -12,5 +13,6 @@
   checkout: 'Confirma pedido'
   new_prod: 'Criar Produto'
   back_prod: 'Voltar'
+  new_coupon: 'Criar Cupom'
   value_min: 200
 

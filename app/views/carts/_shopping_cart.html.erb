@@ -13,7 +13,9 @@
  	<% if current_order.subtotal >= t('value_min') %>
  		<%= link_to t('checkout'), checkout_path, class: "btn btn-success"%>
  	<% else %>
-    	<%= link_to t('checkout'), checkout_path, { data: { confirm: "Sua pedido nåo atingiu valor minimo de '#{t('value_min')}' nåo e possivel finalizar!" },
+    	<%= link_to t('checkout'), checkout_path,
+    	{ data: { confirm: "Sua pedido nåo atingiu valor minimo de '#{number_to_currency minimum_value, unit: "R$", separator: ",", delimiter: ""}'
+    						nåo e possivel finalizar!" },
      	remote: true, class: "btn btn-warning" } %>
 	<% end %>
 </div>
